@@ -1,0 +1,19 @@
+{
+  "name": "alura-docs",
+  "version": "1.0.0",
+  "description": "App Docs is a node.js application for sharing docs with differents users utilizing the tecnologics of web sockets and MongoDB database",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon src/socket-back.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.0",
+    "nodemon": "^3.1.0",
+    "socket.io": "^4.7.5"
+  }
+}
