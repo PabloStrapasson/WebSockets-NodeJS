@@ -3,12 +3,12 @@ import 'dotenv/config'
 
 const client = new MongoClient(process.env.DB_CONNECTION);
 
-let documentosColeção;
+let documentosColecao;
 
 try {
     await client.connect();
     const db = client.db("appdocs-websockets");
-    documentosColeção = db.collection("documentos");
+    documentosColecao = db.collection("documentos");
 
     console.log("Conectado no banco de dados!")
 
@@ -16,4 +16,4 @@ try {
     console.log(erro);
 }
 
-export { documentosColeção };
+export { documentosColecao };

@@ -1,7 +1,7 @@
-import { documentosColeção } from './dbconnect.js';
+import { documentosColecao } from './dbconnect.js';
 
 function encontrarDocumento(tituloDoc){
-    const documento = documentosColeção.findOne({
+    const documento = documentosColecao.findOne({
         titulo: tituloDoc
     });
 
@@ -9,7 +9,7 @@ function encontrarDocumento(tituloDoc){
 }
 
 function atualizaDocumento(titulo, texto){
-    const atualizacao = documentosColeção.updateOne({
+    const atualizacao = documentosColecao.updateOne({
         titulo: titulo,
     }, {
         $set: {
@@ -20,4 +20,24 @@ function atualizaDocumento(titulo, texto){
     return atualizacao
 }
 
-export { encontrarDocumento, atualizaDocumento }
+function adicionarDocumento(tituloDoc){
+    const resultado = documentosColecao.insertOne({
+        titulo: tituloDoc,
+        texto: ""
+    });
+    return resultado;
+}
+
+function obterDocumentos(){
+    const documentos = documentosColecao.find().toArray();
+    return documentos;
+}
+
+function excluirDocumento(tituloDoc){
+    const resultado = documentosColecao.deleteOne({
+        titulo: tituloDoc
+    });
+    return resultado;
+}
+
+export { encontrarDocumento, atualizaDocumento, obterDocumentos, adicionarDocumento, excluirDocumento }
