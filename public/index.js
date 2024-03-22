@@ -1,4 +1,3 @@
-//import "./socket-front-index.js"
 import { emitirAdicionarDocumento } from "./socket-front-index.js";
 
 const listDocumentos = document.getElementById("lista-documentos");
